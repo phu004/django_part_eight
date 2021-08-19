@@ -39,9 +39,9 @@ Although we hide the page entry in the sidebar, any non-admin users can get arou
   <summary>Click for solution</summary>
   
 ```sh
-    #ToDo: check if the login user is admin, if not redirect to an anter page which says "Access denied!"
-    if not login_user.isAdmin:
-    return HttpResponse("<h1>Access denied!</h1>")
+#ToDo: check if the login user is admin, if not redirect to an anter page which says "Access denied!"
+if not login_user.isAdmin:
+return HttpResponse("<h1>Access denied!</h1>")
 ```
 </details>
 
