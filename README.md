@@ -14,7 +14,7 @@ workon dj && cd mysite
 ```
 <br/><br/>
 ## 2. Hide the "Users" entry from side bar for non-admin users.
-The sidebar is definied in the template file "base.html".  Open this file, and use a Django "if" block  to wrap around the "create link in the sidebar where it leads to "/main/createPerson". You can assume that the current login user (variable name: "login_user") is always passed into this "base.html" template when it is rendered.
+The sidebar is definied in the template file "base.html".  Open this file, and use a Django "if" block  to wrap around the "createPerson" link in the sidebar where it leads to "/main/createPerson". You can assume that the current login user (variable name: "login_user") is always passed into this "base.html" template when it is rendered.
 
 <details>
   <summary>Click for solution</summary>
