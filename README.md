@@ -33,6 +33,21 @@ The sidebar is definied in the template file "base.html".  Open this file, and u
 
 <br/><br/>
 ## 3. Restrict any non-admin users from accessing the "Users" Person creation page
-Although we have hide the page entry from the side bar, any non-admin users can get around this by manually going into the path "/main/createPerson" To fix this, implement a check logic at the beginning of the view function "createPerson" in "views.py".  If a non-admin user is trying to access this page, redirect the user to a new page which says "Access Denided!" 
+Although we hide the page entry in the sidebar, any non-admin users can get around this by manually going into the path "/main/createPerson" To fix this, implement a check logic at the beginning of the view function "createPerson" in "views.py".  If a non-admin user is trying to access this page, redirect the user to a new page which says "Access denided!" 
+
+<details>
+  <summary>Click for solution</summary>
+  
+```sh
+   #ToDo: check if the login user is admin, if not redirect to an anter page which says "Access denied!"
+    if not login_user.isAdmin:
+        return HttpResponse("<h1>Access denied!</h1>")
+```
+</details>
+
+
+
+
+
 
 
