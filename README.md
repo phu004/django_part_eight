@@ -23,6 +23,7 @@ The sidebar is definied in the template file "base.html".  Open this file, and u
  <div class="sidenav">
         <a href="/main">Home</a>
         <a href="/main/createList">Create</a>
+        <!-- ToDo: only show the link if the current login user is an admin  -->
         {% if login_user.isAdmin %}
                 <a href="/main/createPerson">Users</a>
         {% endif %}
