@@ -45,8 +45,7 @@ return HttpResponse("<h1>Access denied!</h1>")
 ```
 </details>
 
-
-
+If everything is done correctly, when logging in as a non admin such as"Bob" or "Alice" (using the SSO emulator at /setLoginUser), the "Users" entry will disappear from the sidebar, and if you manually navigate to to the path "/main/createPerson", it should show a "Access denied" message.
 
 
 
