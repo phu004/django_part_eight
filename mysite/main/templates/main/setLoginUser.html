@@ -1,0 +1,6 @@
+<h2>Current Login user is {{ name }} ({{upi}})</h2>
+<form method="POST" action="#">
+    {% csrf_token%}
+    {{form.as_p}}
+    <button type="submit" name="save" value="save" >Mock Login User</button>
+</form>

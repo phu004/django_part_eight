@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{create_title}}{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h4>{{create_title}}</h4>
+    <form method="POST" action="#">
+        {% crispy form%}
+        <br>
+    </form>
+    <br><br>
+    <h4>Already Created:</h4>
+    
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">UPI</th>
+            <th scope="col">Admin</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for entry in already_created %}
+                <tr>
+                    <td>{{entry.name}}</td>
+                    <td>{{entry.upi}}</td>
+                    <td>{{entry.isAdmin}}</td>
+                    <td><a href="createPerson?upi={{entry.upi}}">Edit</a></td>
+                </tr>
+            {% endfor %}
+        </tbody> 
+    </table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{create_title}}{% endblock %}
+
+{% block content %}
+<h4>{{create_title}}</h4>
+<form method="POST" action="#">
+    {% csrf_token%}
+    <div class="input-group mb-3">
+        {{form.name}}
+        <button type="submit" name="save" class="btn btn-success">Create New</button>
+    </div>
+</form>
+
+
+{% endblock %}

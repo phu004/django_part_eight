@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+        My Home Page
+{% endblock %}
+
+{% block content %}
+        <h4>To do lists:</h4>
+        <div class="list-group list-group-flush">
+                {% for todolist in list %}
+                        {% if todolist.user.upi == login_user.upi %}
+                                <a href="{{todolist.id}}" class="list-group-item list-group-item-action">{{todolist.name}}</a>
+                        {% endif %}              
+                {% endfor %}
+
+        </div>
+{% endblock %}

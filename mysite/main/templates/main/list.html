@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    {{ls.name}}
+{% endblock %}
+
+{% block content %}
+    <h4>{{ls.name}}</h4>
+    <form method="POST" action="#">
+        {% csrf_token %}
+        {{form}}
+
+         <!-- ToDo: Apply styles to the buttons so they resemble the image from the exercise slides  -->
+         <!-- Hint: Have a look at how style is applyed to buttons in create.html -->
+         <br>
+         <div class="input-group mb-3">
+                <button type="submit" name="newItem" value="newItem" class="btn btn-success">Add Item</button>
+                <input type="text" name="new">
+        </div>
+        <button type="submit" name="save" value="save" class="btn btn-success">Save</button>
+
+    </form>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        $('document').ready(function(){
+           //ToDo: change the class for the ul element (with id="id_items") to 'list-group list-group-flush'.
+           //Then change all its child li element's class to "list-group-item"
+           var my_ul = document.getElementById("id_items");
+           my_ul.className  = 'list-group list-group-flush';
+           my_lis =  my_ul.getElementsByTagName("li");
+           for(var i = 0; i < my_lis.length; i++)
+                my_lis[i].classList.add("list-group-item");
+        });
+    </script>
+{% endblock javascript %}
+
